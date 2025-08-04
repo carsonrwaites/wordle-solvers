@@ -1,4 +1,5 @@
-# solver_interface.py
+# Placeholder interface for running from master launcher (not implemented)
+
 class SolverInterface:
     def reset(self, word_list):
         """

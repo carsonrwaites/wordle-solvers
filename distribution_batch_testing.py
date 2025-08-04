@@ -1,4 +1,3 @@
-import csv
 from logger import Logger
 from game_engine import play_game
 from entropy_solver import EntropySolver
@@ -7,6 +6,9 @@ from datetime import datetime
 from minimax_solver import MinimaxSolver
 from feedback_cache import load_cache, save_cache
 
+# Change solver under run_single_game
+# Choose starting word(s) in main()
+# Batch processing resulted in ~80% time reduction in testing
 
 def load_word_list(filename):
     with open(filename, 'r', encoding='utf-8-sig') as f:

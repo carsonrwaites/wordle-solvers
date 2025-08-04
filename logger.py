@@ -1,4 +1,3 @@
-# logger.py
 from collections import Counter
 import json
 

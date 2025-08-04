@@ -1,4 +1,3 @@
-import csv
 import math
 from collections import defaultdict
 
@@ -64,11 +63,9 @@ class WordleSolver:
         return entropy
 
     def find_best_guess(self, round_num):
-        # Precomputed best first guess
         if round_num == 1:
             self.input_first()
             return self.first_guess, self.calculate_entropy(self.first_guess)
-        # Otherwise compute dynamically
         best_word = None
         best_entropy = -1
         for guess in self.all_guesses:
@@ -105,7 +102,6 @@ def main():
 
     solver = WordleSolver("wordle_full_list.csv", )
 
-    # Round loop
     for round_num in range(1, 7):
         print(f"\nRound {round_num}")
         guess, entropy = solver.find_best_guess(round_num)

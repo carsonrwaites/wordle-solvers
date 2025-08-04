@@ -1,4 +1,3 @@
-# feedback.py
 def get_feedback_pattern(guess, answer):
     """
     Compute Wordle feedback for guess vs answer.

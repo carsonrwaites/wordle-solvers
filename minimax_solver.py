@@ -1,6 +1,3 @@
-# minimax_solver.py
-#from feedback import get_feedback_pattern
-#from feedback_cache import get_feedback_pattern_cached as get_feedback_pattern
 import feedback_cache
 from solver_interface import SolverInterface
 import math
@@ -13,11 +10,9 @@ class MinimaxSolver(SolverInterface):
         self.first_guess = first_guess
 
     def get_guess(self, round_number):
-        # First guess fixed
         if round_number == 1:
             return self.first_guess
 
-        # If only one or two candidates left, guess them directly
         if len(self.possible_answers) <= 2:
             return self.possible_answers[0]
 
@@ -29,7 +24,6 @@ class MinimaxSolver(SolverInterface):
             # Map pattern -> number of words remaining
             pattern_groups = {}
             for answer in self.possible_answers:
-                #pattern = get_feedback_pattern(guess, answer)
                 pattern = feedback_cache.get_feedback_pattern_cached(guess, answer)
                 pattern_groups[pattern] = pattern_groups.get(pattern, 0) + 1
 

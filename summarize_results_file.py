@@ -1,13 +1,12 @@
-# summarize_results_file.py
 import json
 from collections import Counter
 
+# Results from runs should be in a subfolder called 'results'
+
 def summarize_results_from_file(filename):
-    # Load JSON file
     with open(filename, "r", encoding="utf-8") as f:
         games = json.load(f)
 
-    # Analyze results
     solve_lengths = Counter()
     guess_frequency = Counter()
 
@@ -18,7 +17,6 @@ def summarize_results_from_file(filename):
             solve_lengths["X"] += 1
         guess_frequency.update(game["guesses"])
 
-    # Print summary
     print(f"--- Summary for {filename} ---")
     print(f"Total games: {len(games)}")
     print("Solve lengths:")
@@ -30,7 +28,5 @@ def summarize_results_from_file(filename):
     print()
 
 if __name__ == "__main__":
-    # Example usage
     filename = "results/minimax_arise_results.txt"
     summarize_results_from_file(filename)
-

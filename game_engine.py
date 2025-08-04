@@ -1,4 +1,3 @@
-# game_engine.py
 from feedback import get_feedback_pattern
 
 def play_game(answer, solver, allowed_words, first_guess="raise"):

@@ -3,6 +3,9 @@ import os
 import pickle
 from feedback import get_feedback_pattern as _get_feedback_pattern
 
+### THE CACHE DOES NOT WORK
+# This program is still able to properly compute feedback patterns via the above call
+
 _CACHE_FILE = "feedback_cache.pkl"
 _feedback_cache = {}
 _hits = 0
